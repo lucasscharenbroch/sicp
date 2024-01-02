@@ -7,7 +7,6 @@
       (and (eq? (car l1) (car l2)) (equal? (cdr l1) (cdr l2)))))
 
 ; 2.57
-
 (define (deriv exp var)
   (cond ((number? exp) 0)
         ((variable? exp) (if (same-variable? exp var) 1 0))
@@ -94,7 +93,6 @@
         ((< e (car s)) (cons e s))
         ((> e (car s)) (cons (car s) (adjoin-set e (cdr s))))))
 ; 2.62
-
 (define (union-set s1 s2)
   (cond ((or (null? s1) (null? s2)) (append s1 s2))
         ((= (car s1) (car s2)) (cons (car s1) (union-set (cdr s1) (cdr s2))))
